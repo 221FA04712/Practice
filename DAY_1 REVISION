@@ -1,0 +1,328 @@
+//Recursive code for printing numbers from 0 to 3 
+
+
+class Recursion {
+    static int cnt = 0;
+    static void print(){
+        
+         // Base Condition.
+         if(cnt == 3 ) return;
+         System.out.println(cnt);
+
+         // Count increses.
+         cnt = cnt+1;
+         print();
+
+    }
+    public static void main(String[] args) {
+        print();
+    }
+}
+
+
+
+//Print Name N times using Recursion
+
+
+class Recursion {
+    
+    static void func(int i, int n){
+        
+            // Base Condition.
+            if(i>n) return;
+            System.out.println("Raj");
+
+            // Function call to print till i increments.
+            func(i+1,n);
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of n to be 4.
+       int n = 4;
+       func(1,n);
+    }
+}
+
+
+
+//tc & sc= O(n)
+
+
+
+//Print 1 to N using Recursion
+
+
+class Recursion {
+    
+    static void func(int i, int n){
+        
+            // Base Condition.
+            if(i>n) return;
+            System.out.println(i);
+
+            // Function call to print i till i increments to n.
+            func(i+1,n);
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of n to be 4.
+       int n = 4;
+       func(1,n);
+    }
+}
+
+
+
+//Alternate Approach for printing integers from 1 to N (using Backtracking)
+
+class Recursion {
+    
+    static void func(int i, int n){
+        
+            // Base Condition.
+            if(i<1) return;
+            
+            // Function call to print(n-1) integers.
+            func(i-1,n);
+            System.out.println(i);
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of n to be 4.
+       int n = 4;
+       func(n,n);
+    }
+}
+
+
+
+//Print N to 1 using Recursion
+
+
+class Recursion {
+    
+    static void func(int i, int n){
+        
+            // Base Condition.
+            if(i<1) return;
+            System.out.println(i);
+
+            // Function call to print i till i decrements to 1.
+            func(i-1,n);
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of n to be 4.
+       int n = 4;
+       func(n,n);
+    }
+}
+
+
+//Alternate Approach for printing integers from N to 1 (using Backtracking)
+
+
+class Recursion {
+    
+    static void func(int i, int n){
+        
+            // Base Condition.
+            if(i>n) return;
+            
+            // Function call to print(i+1) integers.
+            func(i+1,n);
+            System.out.println(i);
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of n to be 4.
+       int n = 4;
+       func(1,n);
+    }
+}
+
+
+
+//Recursive way of calculating the sum of first N Natural Numbers:(Parameterized Way)
+
+
+class Recursion {
+    
+    static void func(int i, int sum){
+        
+            // Base Condition.
+            if(i<1){
+                
+                System.out.println(sum);
+                return;
+            }
+            
+            // Function call to increment sum by i till i decrements to 1.
+            func(i-1,sum+i);
+            
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of n to be 3.
+       int n = 3;
+       func(n,0);
+    }
+}
+
+
+//Recursive way of calculating the sum of first N Natural Numbers:( Functional way)
+
+
+class Recursion {
+    
+    static int func(int n){
+        
+            // Base Condition.
+            if(n == 0){
+                
+                return 0;
+            }
+            
+            // Problem broken down into 2 parts and then combined.
+            return n + func(n-1);
+            
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of n to be 3.
+       int n = 3;
+       System.out.println(func(n));
+    }
+}
+
+
+
+
+
+ // Recursive function to calculate factorial of a number
+
+
+
+public class Main {
+
+  
+    public static int factorial(int n) {
+        // Base case: factorial of 0 is 1
+        if (n == 0) {
+            return 1;
+        }
+
+        // Recursive case: n * factorial of (n-1)
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        // Define the number to compute factorial
+        int n = 3;
+
+        // Call the factorial function and print the result
+        System.out.println(factorial(n));
+    }
+}
+
+
+
+
+//Reverse a given Array
+
+
+
+public class Main {
+   //Function to print array
+   static void printArray(int arr[], int n) {
+      System.out.print("Reversed array is:- \n");
+      for (int i = 0; i < n; i++) {
+         System.out.print(arr[i] + " ");
+      }
+   }
+   //Function to reverse array using recursion
+   static void reverseArray(int arr[], int start, int end) {
+      if (start < end) {
+         int tmp = arr[start];
+         arr[start] = arr[end];
+         arr[end] = tmp;
+         reverseArray(arr, start + 1, end - 1);
+      }
+   }
+   public static void main(String[] args) {
+      int n = 5;
+      int arr[] = { 5, 4, 3, 2, 1};
+      reverseArray(arr, 0, n - 1);
+      printArray(arr, n);
+   }
+}
+ 
+
+
+//Check if the given String is Palindrome or not
+
+
+class Recursion {
+    
+    static boolean palindrome(int i, String s){
+        
+            // Base Condition
+            // If i exceeds half of the string, means all the elements 
+            // are compared, we return true.
+            if(i>=s.length()/2) return true;
+            
+            // If start is not equal to end, not palindrome.
+            if(s.charAt(i)!=s.charAt(s.length()-i-1)) return false;
+            
+            // If both characters are same, increment i and check start+1 and end-1.
+            return palindrome(i+1,s);
+            
+
+    }
+    public static void main(String[] args) {
+
+       // Example string.
+       String s = "madam";
+       System.out.println(palindrome(0,s));
+    }
+}
+
+
+
+//Print Fibonacci Series up to Nth term
+
+class Recursion {
+    
+    static int fibonacci(int N){
+        
+            // Base Condition.
+            if(N <= 1){
+                
+                return N;
+            }
+            
+            // Problem broken down into 2 functional calls
+            // and their results combined and returned.
+            int last = fibonacci(N-1);
+            int slast = fibonacci(N-2);
+            
+            return last + slast;
+            
+
+    }
+    public static void main(String[] args) {
+
+       // Here, let’s take the value of N to be 4.
+       int N = 4;
+       System.out.println(fibonacci(N));
+    }
+}
+
+
